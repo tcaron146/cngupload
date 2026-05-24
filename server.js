@@ -49,7 +49,7 @@ app.post('/api/contact', async (req, res) => {
 
   const mailOptions = {
     from: `"C&G Painting Website" <${process.env.GMAIL_USER || process.env.SMTP_USER}>`,
-    to: 'tcaron146@gmail.com',
+    to: 'cargrafpaint@gmail.com',
     replyTo: email,
     subject: `New Quote Request — ${service} (${name})`,
     html: `
