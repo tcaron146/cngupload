@@ -70,12 +70,21 @@
   }
   .cta:hover{transform:translateY(-2px)}
   .nav-phone{display:none}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;position:relative;z-index:1;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--ink);transition:all 0.3s ease;}
+  .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:24px 28px 32px;flex-direction:column;gap:0;}
+  .mobile-menu a{display:block;padding:16px 0;font-size:18px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);}
+  .mobile-menu .cta{margin-top:24px;text-align:center;padding:16px;font-size:16px;border-bottom:none;}
+  nav.open .mobile-menu{display:flex;}
+  nav.open .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  nav.open .hamburger span:nth-child(2){opacity:0;}
+  nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
   @media(max-width:780px){
     .nav-inner{height:60px;padding:0 16px;}
-    .nav-links a:not(.cta){display:none}
-    .nav-phone{display:inline-block;font-size:13px;font-weight:600}
+    .nav-links{display:none;}
     .logo-slot img{height:130px;}
-    .cta{padding:8px 14px;font-size:13px;}
+    .hamburger{display:flex;}
+    .cta:not(.mobile-menu .cta){display:none;}
   }
 
   /* ---------- HERO ---------- */
@@ -421,6 +430,15 @@
       <img src="transparent.PNG" alt="C&G Painting" style="height:220px;width:auto;pointer-events:auto;">
     </div>
     <a href="#contact" class="cta" style="position:relative;z-index:1;">Get a Quote</a>
+    <button class="hamburger" aria-label="Menu" onclick="this.closest('nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="#services" onclick="this.closest('nav').classList.remove('open')">Services</a>
+    <a href="#work" onclick="this.closest('nav').classList.remove('open')">Our Work</a>
+    <a href="#about" onclick="this.closest('nav').classList.remove('open')">About</a>
+    <a href="#contact" class="cta" onclick="this.closest('nav').classList.remove('open')">Get a Quote</a>
   </div>
 </nav>
 
