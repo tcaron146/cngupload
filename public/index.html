@@ -38,13 +38,14 @@
     overflow:visible;
   }
   .nav-inner{
-    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
-    padding:0 28px;max-width:1280px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 28px;height:80px;max-width:1280px;margin:0 auto;
+    position:relative;
   }
   .logo-slot{
-    display:flex;justify-content:center;
+    position:absolute;left:50%;top:0;transform:translateX(-50%);
+    display:flex;pointer-events:none;
   }
-  .logo-slot{display:flex;align-items:center;gap:14px}
   .logo-box{
     width:52px;height:52px;
     background:var(--yellow);
@@ -424,9 +425,9 @@
       <a href="tel:9785189648" class="nav-phone">978-518-9648</a>
     </div>
     <div class="logo-slot">
-      <img src="transparent.PNG" alt="C&G Painting" style="height:220px;width:auto;">
+      <img src="transparent.PNG" alt="C&G Painting" style="height:220px;width:auto;pointer-events:auto;">
     </div>
-    <a href="#contact" class="cta">Get a Quote</a>
+    <a href="#contact" class="cta" style="position:relative;z-index:1;">Get a Quote</a>
   </div>
 </nav>
 
