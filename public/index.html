@@ -46,6 +46,7 @@
     position:absolute;left:50%;top:calc(50% + 10px);transform:translate(-50%,-50%);
     display:flex;pointer-events:none;
   }
+  .nav-logo{height:220px;width:auto;pointer-events:auto;}
   .logo-box{
     width:52px;height:52px;
     background:var(--yellow);
@@ -83,7 +84,7 @@
   @media(max-width:780px){
     .nav-inner{height:60px;padding:0 16px;}
     .nav-links{display:none;}
-    .logo-slot img{height:65px;}
+    .nav-logo{height:65px;}
     .hamburger{display:flex;}
     .cta:not(.mobile-menu .cta){display:none;}
   }
@@ -437,7 +438,7 @@
       <a href="tel:9785189648" class="nav-phone">978-518-9648</a>
     </div>
     <div class="logo-slot">
-      <img src="transparent.PNG" alt="C&G Painting" style="height:220px;width:auto;pointer-events:auto;">
+      <img src="transparent.PNG" alt="C&G Painting" class="nav-logo">
     </div>
     <a href="#contact" class="cta" style="position:relative;z-index:1;">Get a Quote</a>
     <button class="hamburger" aria-label="Menu" onclick="this.closest('nav').classList.toggle('open')">
